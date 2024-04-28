@@ -16,19 +16,9 @@ const palindromes = function (string) {
             }
     }
 
-    const firstHalf = noPunct.substring(0, Math.floor(noPunct.length/2));
-    let secondHalf = "";
+    const reversed = noPunct.split("").reduce((total, current) => current + total, "");
 
-    if (noPunct.length % 2 === 0) {
-        secondHalf = noPunct.substring(Math.floor(noPunct.length/2));
-    }
-    else {
-        secondHalf = noPunct.substring(Math.floor(noPunct.length/2) + 1);
-    }
-
-    const secondHalfReversed = secondHalf.split("").reduce((total, current) => current + total, "");
-
-    return firstHalf === secondHalfReversed;
+    return noPunct === reversed;
 };
 
 // Do not edit below this line
